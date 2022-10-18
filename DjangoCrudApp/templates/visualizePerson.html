@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="col-sm-4 col-md-6 col-lg-8 col-xl-8 px-5"></div>
+    <h1>Person Information</h1>
+    <div class="container"></div>
+        <table class="table table-striped">
+            <tr>
+                <td><b>Id</b></td>
+                <td id="idPerson">{{person}}</td>
+            </tr>
+            <tr>
+                <td><b>Index</b></td>
+                <td>{{person.index}}</td>
+            </tr>
+            <tr>
+                <td><b>Name</b></td>
+                <td>{{person.name}}</td>
+            </tr>
+            <tr>
+                <td><b>Gender</b></td>
+                <td>{{person.gender}}</td>
+            </tr>
+            <tr>
+                <td><b>Age</b></td>
+                <td>{{person.age}}</td>
+            </tr>
+            <tr>
+                <td><b>Eye Color</b></td>
+                <td>{{person.eyeColor}}</td>
+            </tr>
+            <tr>
+                <td><b>Balance</b></td>
+                <td>{{person.balance}}</td>
+            </tr>
+            <tr>
+                <td><b>Tags</b></td>
+                <td>
+                    {% for tag in person.tags %}
+                        <li>{{tag}}</li>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td><b>Friends</b></td>
+                <td>
+                    {% for friend in person.friends %}
+                        <li>{{friend.id}} - {{friend.name}}</li>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td><b>Greeting</b></td>
+                <td>{{person.greeting}}</td>
+            </tr>
+            <tr>
+                <td><b>Favorite Fruit</b></td>
+                <td>{{person.favoriteFruit}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}
